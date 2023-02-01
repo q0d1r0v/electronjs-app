@@ -17,14 +17,8 @@ const createWindow = () => {
     const indexFilePath = path.join(__dirname, './src/pages/index.html')
     win.loadFile(indexFilePath)
 }
-
 app.whenReady().then(() => {
     createWindow()
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow();
-        }
-    });
 })
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
