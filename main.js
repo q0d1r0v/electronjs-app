@@ -3,8 +3,15 @@ const path = require('path')
 
 const createWindow = () => {
     const win = new BrowserWindow({
+        // width and height
         width: 800,
-        height: 600
+        height: 600,
+        // top bar
+        autoHideMenuBar: true,
+        // dev tools
+        webPreferences: {
+            devTools: true
+        }
     })
 
     const indexFilePath = path.join(__dirname, './src/pages/index.html')
